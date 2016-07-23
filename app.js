@@ -7,15 +7,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan-debug');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var cons = require('consolidate');
 var app = express();
 
 console.log(chalk.yellow.bgBlack('Running on NODE_ENV:', app.get('env')));
 console.log(require('./lib/figlet.js')); // logo
 
+
 // view engine setup
+app.engine('html', cons.handlebars);
+app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade'); // TODO: change template engine
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));

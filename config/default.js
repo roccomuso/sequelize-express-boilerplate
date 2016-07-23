@@ -7,8 +7,8 @@ module.exports = {
         host: "127.0.0.1",
     },
     debug: true,
-    logo: 'Whatsapp-Hack',
-    namespace: 'whatsapp',
+    logo: 'Boilerplate',
+    namespace: 'boilerplate',
     server:{
       port: 7777
     }
