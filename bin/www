@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var config = require('config');
+var debug = require('../lib/debug')();
+var app = require('../app');
+var models = require("../models");
+
+app.set('port', process.env.PORT || config.server.port);
+
+models.sequelize.sync().then(function () {
+  var server = app.listen(app.get('port'), function() {
+    debug('Server listening on port ' + server.address().port);
+  });
+});
