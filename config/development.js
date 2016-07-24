@@ -3,7 +3,7 @@ module.exports = {
         dialect: 'mysql',
         username: "root",
         password: "root",
-        database: "whatsapp-hack",
+        database: "database_dev",
         host: "127.0.0.1",
     },
     debug: true
