@@ -1,0 +1,25 @@
+
+<h2>Creating a new user</h2>
+<form action="/users/create" method="post">
+  <input type="text" name="username" placeholder="username" />
+  <input type="submit" value="Send"  />
+</form>
+
+<h2>Users</h2>
+
+<ul>
+{{#each users}}
+<li>{{username}} (<a href="/users/{{id}}/destroy">Destroy</a>) |
+   create a new task:
+  <form action="/users/{{id}}/tasks/create" method="post" style="display:inline">
+      <input type="text" name="title">
+      <input type="submit" value="invia">
+      <ol>
+      {{#each Tasks}}
+        <li>{{title}} | <a href="/users/{{../id}}/tasks/{{id}}/destroy">(Destroy)</a></li>
+      {{/each}}
+      </ol>
+  </form>
+</li>
+{{/each}}
+</ul>
