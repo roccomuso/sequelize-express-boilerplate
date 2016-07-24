@@ -24,7 +24,6 @@
     "express": "~4.13.1",
     "figlet": "1.1.2",
     "handlebars": "^4.0.5",
-    "jade": "~1.11.0",
     "morgan-debug": "^1.0.0",
     "mysql": "^2.11.1",
     "sequelize": "^3.3.2",
