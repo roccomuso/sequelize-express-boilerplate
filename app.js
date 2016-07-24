@@ -8,16 +8,16 @@ var logger = require('morgan-debug');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cons = require('consolidate');
+
 var app = express();
 
 console.log(chalk.yellow.bgBlack('Running on NODE_ENV:', app.get('env')));
 console.log(require('./lib/figlet.js')); // logo
 
-
 // view engine setup
 app.engine('html', cons.handlebars);
-app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -41,7 +41,8 @@ app.use(function(req, res, next) {
 // no stacktraces leaked to user unless in development environment
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
+  res.render('index', {
+    partials: {body: 'error'},
     message: err.message,
     error: (app.get('env') === 'development') ? err : {}
   });

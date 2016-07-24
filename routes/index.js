@@ -9,6 +9,7 @@ router.get('/', function(req, res) {
   }).then(function(users) {
     debug('Users fetched');
     res.render('index', {
+      partials: {body: 'body'},
       title: 'Express',
       users: users
     });
