@@ -3,9 +3,12 @@ var models  = require('../models');
 var express = require('express');
 var router  = express.Router();
 
+// models.<cachedModel>.model   <-- original Sequelize Model
+// models.<cachedModel>         <-- cached Sequelize Model
+
 router.get('/', function(req, res) {
   models.User.findAll({
-    include: [ models.Task ]
+    include: [ models.Task.model ]
   }).then(function(users) {
     debug('Users fetched');
     res.render('index', {
