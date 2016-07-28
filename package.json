@@ -1,10 +1,12 @@
 {
   "name": "seq-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "sequelize boilerplate",
   "scripts": {
     "start": "node ./bin/www",
+    "prod": "NODE_ENV=production npm start",
+    "dev": "NODE_ENV=development DEBUG=whatsapp:*,sequelize-cacher:* npm start",
     "test": "npm run test-unit && npm run test-integration",
     "test-unit": "mocha test/unit/*.test.js",
     "test-integration": "mocha test/integration/*.test.js"

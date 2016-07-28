@@ -15,6 +15,12 @@ npm install
 npm start
 ```
 
+or for debugging purpose:
+
+```
+npm run dev
+```
+
 This will start the application and create an sqlite database in your app dir.
 Just open [http://localhost:3000](http://localhost:3000).
 
