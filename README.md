@@ -3,6 +3,11 @@
 This repository demonstrates the usage of sequelize within an express application.
 The implemented logic is a simple task tracking tool.
 
+## Setup
+
+This repo uses the sequelize-cacher module to provide a cache layer (leveraging both Redis or Memcached).
+So make sure to <code>apt-get install memcached</code>, then make sure it's running <code>service memcached status</code>, and put his ip and port con the <code>config/default.js</code> file.
+
 ## Starting the app
 
 ```
@@ -91,6 +96,3 @@ function onListening() { /* ... */ }
 And finally you have to adjust the `config/config.json` to fit your environment.
 Once thats done, your database configuration is ready!
 
-## The tests
-
-You can run the tests by executing `npm test`.
